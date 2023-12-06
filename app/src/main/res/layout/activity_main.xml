@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".view.MainActivity">
 
     <TextView
@@ -11,21 +12,46 @@
         android:layout_width="wrap_content"
         android:text="No connected"
         android:textSize="16sp"
+        android:textColor="#000"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_height="wrap_content"/>
 
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/connection_status"
+        android:layout_marginLeft="10dp"
+        android:text="Duration: 00:00:00"
+        android:textColor="#000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/anotherInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/duration"
+        android:layout_marginLeft="10dp"
+        android:text=""
+        android:textColor="#000"
+        android:textSize="14sp" />
+
     <Button
         android:id="@+id/btn_connect"
         android:layout_width="100dp"
         android:text="Start"
         android:textAllCaps="false"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/connection_status"
+        app:layout_constraintTop_toBottomOf="@id/anotherInfo"
         android:layout_height="wrap_content"/>
 
     <Button

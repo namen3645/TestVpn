@@ -1,27 +1,31 @@
 package com.myfast.openvpn.view
 
+import android.R
 import android.app.Activity
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.IBinder
 import android.os.RemoteException
+import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.myfast.openvpn.R
 import com.myfast.openvpn.data.ConnectState
 import com.myfast.openvpn.databinding.ActivityMainBinding
 import com.myfast.openvpn.helper.InternetHelper
+import com.myfast.openvpn.service.TimerService
 import de.blinkt.openvpn.api.IOpenVPNAPIService
 import de.blinkt.openvpn.api.IOpenVPNStatusCallback
+import de.blinkt.openvpn.core.VpnStatus
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,6 +41,8 @@ class MainActivity : AppCompatActivity() {
     private val VPN_PERMISSION = 85
     private val NOTIFICATIONS_PERMISSION_REQUEST_CODE = 11
     protected var mService: IOpenVPNAPIService? = null
+    protected var mTimerService: TimerService? = null
+    private var mBound = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnStop.setOnClickListener {
             stopVpn()
         }
+        VpnStatus.initLogCache(this.codeCacheDir)
     }
 
     override fun onResume() {
@@ -61,7 +68,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        unbindService()
+        if (mService != null) {
+            unbindService();
+        }
     }
 
     private fun unbindService() {
@@ -80,8 +89,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        bindService()
         mHandler = Handler()
+        binding.duration.text = "Duration: 00:00:00"
+        bindService()
     }
 
     private fun prepareVpn() {
@@ -161,11 +171,17 @@ class MainActivity : AppCompatActivity() {
             if (!auth_failed) {
                 try {
                     if (state == "CONNECTED") {
+                        runOnUiThread {
+                            binding.anotherInfo.text = message
+                        }
                         auth_failed = false
                         setStatus(state)
                         if (ActivityCompat.checkSelfPermission(applicationContext, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
                             ActivityCompat.requestPermissions(this@MainActivity, arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), NOTIFICATIONS_PERMISSION_REQUEST_CODE)
                         }
+                        bindTimerService();
+                    } else {
+                        unbindTimerService()
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -174,6 +190,20 @@ class MainActivity : AppCompatActivity() {
             } else {
                 setStatus("CONNECTRETRY")
             }
+        }
+    }
+
+    private val mTimerServiceConnection: ServiceConnection = object : ServiceConnection {
+        override fun onServiceConnected(componentName: ComponentName, iBinder: IBinder) {
+            val binder = iBinder as TimerService.LocalBinder
+            mTimerService = binder.getService()
+            binder.setCallback(mTimerServiceCallback)
+            mBound = true
+        }
+
+        override fun onServiceDisconnected(componentName: ComponentName) {
+            // This will be called when the service is disconnected unexpectedly
+            mBound = false
         }
     }
 
@@ -263,6 +293,29 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private val mTimerServiceCallback = object : TimerService.TimerServiceCallback {
+        override fun onDurationChanged(duration: String) {
+            if (mBound) {
+                runOnUiThread {
+                    binding.duration.text = "Duration: $duration"
+                }
+            }
+        }
+    }
+
+    private fun bindTimerService() {
+        val serviceIntent = Intent(this, TimerService::class.java)
+        serviceIntent.setPackage("com.myfast.openvpn")
+        bindService(serviceIntent, mTimerServiceConnection, Context.BIND_AUTO_CREATE)
+    }
+
+    private fun unbindTimerService() {
+        if (mBound) {
+            unbindService(mTimerServiceConnection)
+            mBound = false
+        }
+    }
+
     fun readAssetFile(context: Context, fileName: String): String {
         val assetManager = context.assets
         val inputStream = assetManager.open(fileName)
@@ -286,5 +339,7 @@ class MainActivity : AppCompatActivity() {
 
         return stringBuilder.toString()
     }
+
+
 
 }
