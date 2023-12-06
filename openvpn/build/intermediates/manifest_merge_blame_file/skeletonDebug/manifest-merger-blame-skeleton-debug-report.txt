@@ -1,0 +1,259 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3  ~ Copyright (c) 2012-2019 Arne Schwabe
+4  ~ Distributed under the GNU GPL v2 with additional terms. For full terms see the file doc/LICENSE.txt
+5-->
+6<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+7    xmlns:tools="http://schemas.android.com/tools"
+8    package="de.blinkt.openvpn" >
+9
+10    <uses-sdk android:minSdkVersion="21" />
+11
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:5:5-67
+12-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:5:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:6:5-79
+13-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:6:22-76
+14    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+14-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:7:5-81
+14-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:7:22-78
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+15-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:8:5-80
+15-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:8:22-77
+16    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+16-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:9:5-77
+16-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:9:22-74
+17    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+17-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:10:5-77
+17-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:10:22-74
+18
+19    <application
+19-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:28:5-137:19
+20        android:name="de.blinkt.openvpn.core.ICSOpenVPNApplication"
+20-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:29:9-51
+21        android:allowBackup="true"
+21-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:30:9-35
+22        android:appCategory="productivity"
+22-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:31:9-43
+23        android:extractNativeLibs="true"
+23-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:32:9-41
+24        android:icon="@mipmap/ic_launcher"
+24-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:33:9-43
+25        android:roundIcon="@mipmap/ic_launcher_round"
+25-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:34:9-54
+26        android:supportsRtl="true"
+26-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:35:9-35
+27        tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute" >
+27-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:36:9-39
+28        <activity
+28-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:10:9-13:47
+29            android:name="de.blinkt.openvpn.activities.NotImplemented"
+29-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:12:13-54
+30            android:exported="true"
+30-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:11:17-40
+31            tools:ignore="ExportedActivity" />
+31-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:13:13-44
+32
+33        <activity-alias
+33-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:21:9-25:19
+34            android:name="de.blinkt.openvpn.activities.Req"
+34-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:23:17-47
+35            android:exported="true"
+35-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:22:17-40
+36            android:targetActivity="de.blinkt.openvpn.activities.NotImplemented" />
+36-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:24:17-68
+37        <activity-alias
+37-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:15:9-19:15
+38            android:name="de.blinkt.openvpn.activities.LogWindow"
+38-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:17:17-53
+39            android:exported="true"
+39-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:16:17-40
+40            android:targetActivity="de.blinkt.openvpn.activities.NotImplemented" />
+40-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:18:17-68
+41
+42        <meta-data
+42-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:37:9-39:56
+43            android:name="android.content.APP_RESTRICTIONS"
+43-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:38:13-60
+44            android:resource="@xml/app_restrictions" />
+44-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:39:13-53
+45
+46        <activity
+46-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:41:9-47:52
+47            android:name="de.blinkt.openvpn.activities.DisconnectVPN"
+47-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:42:13-53
+48            android:autoRemoveFromRecents="true"
+48-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:43:13-49
+49            android:excludeFromRecents="true"
+49-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:44:13-46
+50            android:noHistory="true"
+50-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:45:13-37
+51            android:taskAffinity=".DisconnectVPN"
+51-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:46:13-50
+52            android:theme="@style/blinkt.dialog" />
+52-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:47:13-49
+53
+54        <service
+54-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:50:9-59:19
+55            android:name="de.blinkt.openvpn.core.OpenVPNService"
+55-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:51:13-48
+56            android:exported="true"
+56-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:52:13-36
+57            android:foregroundServiceType="connectedDevice"
+57-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:54:13-60
+58            android:permission="android.permission.BIND_VPN_SERVICE"
+58-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:53:13-69
+59            android:process=":openvpn" >
+59-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:55:13-39
+60            <intent-filter>
+60-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:56:13-58:29
+61                <action android:name="android.net.VpnService" />
+61-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:57:17-65
+61-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:57:25-62
+62            </intent-filter>
+63        </service>
+64        <service
+64-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:60:9-68:19
+65            android:name="de.blinkt.openvpn.api.ExternalOpenVPNService"
+65-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:61:13-55
+66            android:exported="true"
+66-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:63:13-36
+67            android:process=":openvpn"
+67-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:62:13-39
+68            tools:ignore="ExportedService" >
+68-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:64:17-47
+69            <intent-filter>
+69-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:65:13-67:29
+70                <action android:name="de.blinkt.openvpn.api.IOpenVPNAPIService" />
+70-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:66:17-83
+70-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:66:25-80
+71            </intent-filter>
+72        </service>
+73        <service
+73-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:69:9-72:42
+74            android:name="de.blinkt.openvpn.core.OpenVPNStatusService"
+74-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:70:13-54
+75            android:exported="false"
+75-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:71:13-37
+76            android:process=":openvpn" />
+76-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:72:13-39
+77
+78        <activity
+78-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:74:9-79:20
+79            android:name="de.blinkt.openvpn.api.GrantPermissionsActivity"
+79-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:74:19-63
+80            android:exported="true" >
+80-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:75:17-40
+81            <intent-filter>
+81-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:76:13-78:29
+82                <action android:name="android.intent.action.MAIN" />
+82-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:77:17-69
+82-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:77:25-66
+83            </intent-filter>
+84        </activity>
+85        <activity
+85-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:80:9-85:20
+86            android:name="de.blinkt.openvpn.api.ConfirmDialog"
+86-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:80:19-52
+87            android:exported="true" >
+87-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:81:17-40
+88            <intent-filter>
+88-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:76:13-78:29
+89                <action android:name="android.intent.action.MAIN" />
+89-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:77:17-69
+89-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:77:25-66
+90            </intent-filter>
+91        </activity>
+92
+93        <receiver
+93-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:87:9-93:20
+94            android:name="de.blinkt.openvpn.OnBootReceiver"
+94-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:87:19-49
+95            android:exported="true" >
+95-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:88:17-40
+96            <intent-filter android:priority="999" >
+96-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:89:13-92:29
+96-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:89:28-50
+97                <action android:name="android.intent.action.BOOT_COMPLETED" />
+97-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:90:17-79
+97-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:90:25-76
+98                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+98-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:91:17-84
+98-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:91:25-81
+99            </intent-filter>
+100        </receiver>
+101
+102        <activity
+102-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:96:9-110:20
+103            android:name="de.blinkt.openvpn.LaunchVPN"
+103-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:97:13-38
+104            android:autoRemoveFromRecents="true"
+104-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:98:13-49
+105            android:excludeFromRecents="true"
+105-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:99:13-46
+106            android:exported="true"
+106-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:103:13-36
+107            android:label="@string/vpn_launch_title"
+107-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:100:13-53
+108            android:taskAffinity=".LaunchVPN"
+108-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:101:13-46
+109            android:theme="@style/blinkt.dialog" >
+109-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:102:13-49
+110            <intent-filter>
+110-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:105:13-109:29
+111                <action android:name="android.intent.action.MAIN" />
+111-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:77:17-69
+111-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:77:25-66
+112
+113                <category android:name="android.intent.category.DEFAULT" />
+113-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:108:17-76
+113-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:108:27-73
+114            </intent-filter>
+115        </activity>
+116        <!--
+117        <receiver android:name="core.GetRestrictionReceiver">
+118            <intent-filter>
+119                <action android:name="android.intent.action.GET_RESTRICTION_ENTRIES" />
+120            </intent-filter>
+121        </receiver>
+122        -->
+123        <activity android:name="de.blinkt.openvpn.api.RemoteAction" />
+123-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:118:9-54
+123-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:118:19-51
+124
+125        <activity-alias
+125-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:132:9-135:62
+126            android:name="de.blinkt.openvpn.api.ResumeVPN"
+126-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:133:17-46
+127            android:exported="true"
+127-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:134:17-40
+128            android:targetActivity="de.blinkt.openvpn.api.RemoteAction" />
+128-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:135:17-59
+129        <activity-alias
+129-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:128:9-131:62
+130            android:name="de.blinkt.openvpn.api.PauseVPN"
+130-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:129:17-45
+131            android:exported="true"
+131-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:130:17-40
+132            android:targetActivity="de.blinkt.openvpn.api.RemoteAction" />
+132-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:131:17-59
+133        <activity-alias
+133-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:124:9-127:58
+134            android:name="de.blinkt.openvpn.api.DisconnectVPN"
+134-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:125:13-46
+135            android:exported="true"
+135-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:126:13-36
+136            android:targetActivity="de.blinkt.openvpn.api.RemoteAction" />
+136-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:127:13-55
+137        <activity-alias
+137-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:120:9-123:58
+138            android:name="de.blinkt.openvpn.api.ConnectVPN"
+138-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:121:13-43
+139            android:exported="true"
+139-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:122:13-36
+140            android:targetActivity="de.blinkt.openvpn.api.RemoteAction" />
+140-->C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:123:13-55
+141    </application>
+142
+143</manifest>

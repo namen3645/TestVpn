@@ -1,0 +1,250 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:2:1-139:12
+MERGED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:2:1-139:12
+INJECTED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:6:1-29:12
+	package
+		INJECTED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:7:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:8:22-77
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:9:5-77
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:9:22-74
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:10:5-77
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:10:22-74
+application
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:28:5-137:19
+MERGED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:28:5-137:19
+MERGED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:28:5-137:19
+	android:extractNativeLibs
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:32:9-41
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:32:9-41
+	android:supportsRtl
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:35:9-35
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:35:9-35
+	android:appCategory
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:31:9-43
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:31:9-43
+	tools:ignore
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:36:9-39
+	android:roundIcon
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:34:9-54
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:34:9-54
+	android:icon
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:33:9-43
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:33:9-43
+	android:allowBackup
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:30:9-35
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:30:9-35
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:29:9-51
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:29:9-51
+meta-data#android.content.APP_RESTRICTIONS
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:37:9-39:56
+	android:resource
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:39:13-53
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:38:13-60
+activity#de.blinkt.openvpn.activities.DisconnectVPN
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:41:9-47:52
+	android:excludeFromRecents
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:44:13-46
+	android:autoRemoveFromRecents
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:43:13-49
+	android:noHistory
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:45:13-37
+	android:theme
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:47:13-49
+	android:taskAffinity
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:46:13-50
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:42:13-53
+service#de.blinkt.openvpn.core.OpenVPNService
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:50:9-59:19
+	android:process
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:55:13-39
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:52:13-36
+	android:permission
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:53:13-69
+	android:foregroundServiceType
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:54:13-60
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:51:13-48
+intent-filter#action:name:android.net.VpnService
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:56:13-58:29
+action#android.net.VpnService
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:57:17-65
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:57:25-62
+service#de.blinkt.openvpn.api.ExternalOpenVPNService
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:60:9-68:19
+	android:process
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:62:13-39
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:63:13-36
+	tools:ignore
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:64:17-47
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:61:13-55
+intent-filter#action:name:de.blinkt.openvpn.api.IOpenVPNAPIService
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:65:13-67:29
+action#de.blinkt.openvpn.api.IOpenVPNAPIService
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:66:17-83
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:66:25-80
+service#de.blinkt.openvpn.core.OpenVPNStatusService
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:69:9-72:42
+	android:process
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:72:13-39
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:71:13-37
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:70:13-54
+activity#de.blinkt.openvpn.api.GrantPermissionsActivity
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:74:9-79:20
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:75:17-40
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:74:19-63
+intent-filter#action:name:android.intent.action.MAIN
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:76:13-78:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:77:17-69
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:77:25-66
+activity#de.blinkt.openvpn.api.ConfirmDialog
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:80:9-85:20
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:81:17-40
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:80:19-52
+receiver#de.blinkt.openvpn.OnBootReceiver
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:87:9-93:20
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:88:17-40
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:87:19-49
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:89:13-92:29
+	android:priority
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:89:28-50
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:90:17-79
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:90:25-76
+action#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:91:17-84
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:91:25-81
+activity#de.blinkt.openvpn.LaunchVPN
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:96:9-110:20
+	android:label
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:100:13-53
+	android:excludeFromRecents
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:99:13-46
+	android:autoRemoveFromRecents
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:98:13-49
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:103:13-36
+	android:theme
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:102:13-49
+	android:taskAffinity
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:101:13-46
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:97:13-38
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:105:13-109:29
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:108:17-76
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:108:27-73
+activity#de.blinkt.openvpn.api.RemoteAction
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:118:9-54
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:118:19-51
+activity-alias#de.blinkt.openvpn.api.ConnectVPN
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:120:9-123:58
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:122:13-36
+	android:targetActivity
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:123:13-55
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:121:13-43
+activity-alias#de.blinkt.openvpn.api.DisconnectVPN
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:124:9-127:58
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:126:13-36
+	android:targetActivity
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:127:13-55
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:125:13-46
+activity-alias#de.blinkt.openvpn.api.PauseVPN
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:128:9-131:62
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:130:17-40
+	android:targetActivity
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:131:17-59
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:129:17-45
+activity-alias#de.blinkt.openvpn.api.ResumeVPN
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:132:9-135:62
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:134:17-40
+	android:targetActivity
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:135:17-59
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\main\AndroidManifest.xml:133:17-46
+activity#de.blinkt.openvpn.activities.NotImplemented
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:10:9-13:47
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:11:17-40
+	tools:ignore
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:13:13-44
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:12:13-54
+activity-alias#de.blinkt.openvpn.activities.LogWindow
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:15:9-19:15
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:16:17-40
+	android:targetActivity
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:18:17-68
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:17:17-53
+activity-alias#de.blinkt.openvpn.activities.Req
+ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:21:9-25:19
+	android:exported
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:22:17-40
+	android:targetActivity
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:24:17-68
+	android:name
+		ADDED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml:23:17-47
+uses-sdk
+INJECTED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml
+INJECTED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\miste\AndroidStudioProjects\TestVpn\openvpn\src\skeleton\AndroidManifest.xml
