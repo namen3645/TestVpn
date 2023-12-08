@@ -1,6 +1,5 @@
 package com.myfast.openvpn.view
 
-import android.R
 import android.app.Activity
 import android.content.ComponentName
 import android.content.Context
@@ -10,8 +9,8 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.IBinder
+import android.os.Message
 import android.os.RemoteException
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -27,22 +26,29 @@ import java.io.IOException
 import java.io.InputStreamReader
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Handler.Callback {
 
     private lateinit var binding:ActivityMainBinding
+
+    private var connection: InternetHelper? = null
     private var mHandler:Handler? = null
     private var vpnStart = false
-    private var currentState:ConnectState = ConnectState.CONNECT
-    private var auth_failed = false
-    private var bindSuccess = false
-    private var connection: InternetHelper? = null
+
     private val MSG_UPDATE_STATE = 0
     private val ICS_OPENVPN_PERMISSION = 7
-    private val VPN_PERMISSION = 85
     private val NOTIFICATIONS_PERMISSION_REQUEST_CODE = 11
-    protected var mService: IOpenVPNAPIService? = null
-    protected var mTimerService: TimerService? = null
+
+    private var mService: IOpenVPNAPIService? = null
+    private var mTimerService: TimerService? = null
     private var mBound = false
+    private var authFailed = false
+
+    private var currentState:ConnectState = ConnectState.CONNECT
+
+
+    private var auth_failed = false
+    private var bindSuccess = false
+    private val VPN_PERMISSION = 85
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,10 +56,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         connection = InternetHelper()
         binding.btnConnect.setOnClickListener {
-            if (!bindSuccess) {
-                bindService()
+            if (vpnStart) {
+                stopVpn()
             } else {
-                prepareVpn()
+                try {
+                    prepareVpn()
+                } catch (e: RemoteException) {
+                    println("openvpn initialization failed: " + e.message)
+                    e.printStackTrace()
+                }
             }
         }
         binding.btnStop.setOnClickListener {
@@ -64,13 +75,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        bindService()
     }
 
     override fun onPause() {
-        super.onPause()
         if (mService != null) {
-            unbindService();
+            unbindService()
         }
+        super.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
     }
 
     private fun unbindService() {
@@ -87,10 +103,10 @@ class MainActivity : AppCompatActivity() {
         return connection?.netCheck(this)!!
     }
 
+
     override fun onStart() {
         super.onStart()
-        mHandler = Handler()
-        binding.duration.text = "Duration: 00:00:00"
+        mHandler = Handler(this)
         bindService()
     }
 
@@ -99,17 +115,19 @@ class MainActivity : AppCompatActivity() {
             if (getInternetStatus()) {
                 val intent = mService?.prepareVPNService()
                 if (intent != null) {
-                    startActivityForResult(intent, VPN_PERMISSION)
+                    startActivityForResult(intent, 1)
                 } else {
-                    onActivityResult(VPN_PERMISSION, Activity.RESULT_OK, null)
+                    startVpn("test.ovpn")
                 }
+                status(ConnectState.CONNECT)
             } else {
-                Toast.makeText(this, "Check Internet connection!", Toast.LENGTH_SHORT).show()
+                println("you have no internet connection !!")
             }
-        } else {
-            stopVpn()
+        } else if (stopVpn()) {
+            println("Disconnect Successfully")
         }
     }
+
 
     private fun startVpn(fileName:String) {
         try {
@@ -128,69 +146,75 @@ class MainActivity : AppCompatActivity() {
 
     private fun stopVpn(): Boolean {
         try {
-            if (currentState == ConnectState.CONNECTED) {
-                mService?.disconnect()
-                status(ConnectState.CONNECT)
-                vpnStart = false
-                return true
-            }
-            return false
+            mService?.disconnect()
+            status(ConnectState.CONNECT)
+            vpnStart = false
+            return true
         } catch (e: RemoteException) {
+            println("openvpn disconnect failed: " + e.message)
             e.printStackTrace()
         }
-
         return false
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == ICS_OPENVPN_PERMISSION && resultCode == Activity.RESULT_OK) {
+        if (requestCode == ICS_OPENVPN_PERMISSION) {
             try {
-                bindSuccess = true
                 mService?.registerStatusCallback(mCallback)
             } catch (e: RemoteException) {
+                println("openvpn status callback failed: " + e.message)
                 e.printStackTrace()
             }
         }
-        if (requestCode == VPN_PERMISSION && resultCode == Activity.RESULT_OK) {
-            vpnStart = true
-            startVpn("test.ovpn")
-        }
     }
 
-    private val mCallback = object : IOpenVPNStatusCallback.Stub() {
-        override fun newStatus(uuid: String?, state: String?, message: String?, level: String?) {
+    private val mCallback: IOpenVPNStatusCallback.Stub = object : IOpenVPNStatusCallback.Stub() {
+        override fun newStatus(uuid: String, state: String, message: String, level: String) {
             val msg = mHandler?.obtainMessage(MSG_UPDATE_STATE, "$state|$message")
-
             if (state == "AUTH_FAILED" || state == "CONNECTRETRY") {
-                auth_failed = true
+                authFailed = true
             }
-
-            println("STATE-------------------------: " + state)
-
-            if (!auth_failed) {
+            if (!authFailed) {
                 try {
-                    if (state == "CONNECTED") {
-                        runOnUiThread {
-                            binding.anotherInfo.text = message
-                        }
-                        auth_failed = false
-                        setStatus(state)
-                        if (ActivityCompat.checkSelfPermission(applicationContext, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                            ActivityCompat.requestPermissions(this@MainActivity, arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), NOTIFICATIONS_PERMISSION_REQUEST_CODE)
-                        }
-                        bindTimerService();
-                    } else {
-                        unbindTimerService()
-                    }
-                } catch (e: Exception) {
+                    setStatus(state)
+                    updateConnectionStatus(state)
+                } catch (e: java.lang.Exception) {
+                    println("openvpn status callback failed: " + e.message)
                     e.printStackTrace()
                 }
                 msg?.sendToTarget()
-            } else {
+            }
+            if (authFailed) {
+                binding.anotherInfo.text = "AUTHORIZATION FAILED!!"
                 setStatus("CONNECTRETRY")
             }
+            if (state == "CONNECTED") {
+                authFailed = false
+                if (ActivityCompat.checkSelfPermission(
+                        this@MainActivity,
+                        android.Manifest.permission.POST_NOTIFICATIONS
+                    ) != PackageManager.PERMISSION_GRANTED
+                ) {
+                    ActivityCompat.requestPermissions(
+                        this@MainActivity,
+                        arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),
+                        NOTIFICATIONS_PERMISSION_REQUEST_CODE
+                    )
+                }
+                bindTimerService()
+            } else {
+                unbindTimerService()
+            }
         }
+    }
+
+    private fun updateConnectionStatus(state: String) {
+        /*
+        if (state != "NOPROCESS") {
+            binding.connectionStatus.text = "state: $state"
+        }
+        */
     }
 
     private val mTimerServiceConnection: ServiceConnection = object : ServiceConnection {
@@ -228,6 +252,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun handleMessage(msg: Message): Boolean {
+        if (msg.what == MSG_UPDATE_STATE) {
+            binding.anotherInfo.text = msg.obj as CharSequence
+        }
+        return true
+    }
 
     fun setStatus(connectionState: String) {
         runOnUiThread {
